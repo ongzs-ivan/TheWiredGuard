@@ -1,0 +1,68 @@
+-----------------------------
+|   What's been completed   |
+-----------------------------
+-> Joystick Control
+	-> Left Joystick:
+	   - Movement
+	   - Rotation
+
+-----------------------------
+|    Production Schedule    |
+-----------------------------
+Week 6:
+- Prototype/Proof of Concept
+
+Week 7:
+- Implement complete game mechanics
+	-> Zoom
+	-> Profile Scanning
+	-> Firing mechanic
+	-> Bullet physics (gravity, wind, spindrift, temperature, humidity, altitude)
+		- Some, not all of the listed physics
+
+Week 8:
+- Level design and build
+
+Week 9:
+- Non-Playable Characters
+	-> Navigation mesh
+	-> Profile randomizer
+- Animations
+
+Week 10:
+- Dialogue system
+
+Week 11:
+- Android build
+- Shaders
+
+Week 12:
+- Replace all remaining placeholders
+- Finalize
+- Submission
+
+-----------------------------
+|          Research         |
+-----------------------------
+Premise:
+Play as a law enforcer in the City of Iron, as you control a cyborg stationed at the top of the city's iconic Iron Watchtower
+who must utilize the weapon you've been provided, a railgun, to maintain the peace and order of the city.
+
+Setting:
+The City of Iron stands as the vanguard for mankind as one of the few remaining civilizations in the world.
+It's walls stand tall and proud amidst the ruined lands and so do its citizens.
+However, appearances can be deceiving as the city of iron is equally ruled with an iron fist.
+Under the dictatorship of Supreme Emperor Yulm, both the city and its citizens are run on tight rules.
+Any form of opposition against his rule or any sort lawlessness in the city is swiftly met with judgement, dealt out by the city's Wired Guards.
+Wired Guards - Soldiers trained to man cyborgs located at the top of the Iron Watchtower, granting them full view over the city, 
+allowing them to dish out justice according to the Emperor's will.
+
+Inspiration/References:
+-> Watchdog
+	- Mechanics: The ability to scan people to screen their profile for info
+
+-> Deus Ex Machina: Mankind Divided
+	- Gameplay: Make choices that avoid/minimize civilian casualties
+
+-> Sniper: Ghost Warrior 3
+	- Mechanic: Sniping enemies
