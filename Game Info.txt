@@ -66,3 +66,6 @@ Inspiration/References:
 
 -> Sniper: Ghost Warrior 3
 	- Mechanic: Sniping enemies
+
+Assets used:
+Joystick Pack - https://assetstore.unity.com/packages/tools/input-management/joystick-pack-107631
