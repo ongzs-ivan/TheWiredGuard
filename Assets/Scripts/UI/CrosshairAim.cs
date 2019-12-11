@@ -15,6 +15,8 @@ public class CrosshairAim : MonoBehaviour
     private Camera currentCamera;
     private float resetTime = 0.5f;
     private Vector3 resetVelocity = Vector3.zero;
+    private RaycastHit hit;
+    private Ray ray;
     
     [SerializeField] JoystickInput newLeftStick;
 
@@ -54,10 +56,9 @@ public class CrosshairAim : MonoBehaviour
     }
 
     //shoots a raycast to tell where the crosshair is on
-    public Vector3 CrosshairPointer()
+    public Vector3 CrosshairPoint()
     {
-        RaycastHit hit;
-        Ray ray = currentCamera.ScreenPointToRay(crosshairRect.position);
+        ray = currentCamera.ScreenPointToRay(crosshairRect.position);
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask) && hit.transform != null)
         {
@@ -66,6 +67,20 @@ public class CrosshairAim : MonoBehaviour
         else
         {
             return Vector3.forward;
+        }
+    }
+
+    public GameObject CrosshairHit()
+    {
+        ray = currentCamera.ScreenPointToRay(crosshairRect.position);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask) && hit.transform != null)
+        {
+            return hit.transform.gameObject;
+        }
+        else
+        {
+            return null;
         }
     }
 }

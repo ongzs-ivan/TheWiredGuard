@@ -16,6 +16,7 @@ public class ShootWeapon : MonoBehaviour, IPointerClickHandler
     private Quaternion bulletRotation;
     private Vector3 bulletDirection;
     private GameObject bulletParent;
+    //private Vector3 aimOffset = new Vector3(0,5,0);
 
     private void Awake()
     {
@@ -28,6 +29,11 @@ public class ShootWeapon : MonoBehaviour, IPointerClickHandler
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        firingBarrel.transform.LookAt(CrosshairAim.instance.CrosshairPoint()); 
     }
 
     public void SetFiringSpeed(float newFiringSpeed)

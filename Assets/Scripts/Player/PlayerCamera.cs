@@ -10,7 +10,7 @@ public class PlayerCamera : MonoBehaviour
     
     private float defaultFOV;
 
-    private Camera assignedCamera;
+    [SerializeField] private Camera assignedCamera;
 
     private Touch touchZero;
     private Touch touchOne;
@@ -29,7 +29,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount == 2)
+        if (Input.touchCount >= 2)
         {
             touchZero = Input.GetTouch(0);
             touchOne = Input.GetTouch(1);

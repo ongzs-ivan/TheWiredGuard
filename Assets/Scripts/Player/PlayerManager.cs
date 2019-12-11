@@ -17,9 +17,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float maxTurretAngle;
     [SerializeField] float minTurretAngle;
     [Range(0.1f, 1.0f)]
-    [SerializeField] float cameraSensitivity;
-    [Range(0.1f, 1.0f)]
-    [SerializeField] float zoomSensitivity;
+    [SerializeField] float cameraSensitivity = 0.5f;
+    [Range(0.01f, 1.0f)]
+    [SerializeField] float zoomSensitivity = 0.01f;
 
     private void Awake()
     {

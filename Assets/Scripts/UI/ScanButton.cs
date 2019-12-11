@@ -32,10 +32,17 @@ public class ScanButton : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        //m_HitDetect = Physics.BoxCast(m_Collider.bounds.center)
-        if (!profileTab.activeSelf)
+        hitTarget = CrosshairAim.instance.CrosshairHit();
+        if (hitTarget != null)
         {
-            profileTab.SetActive(true);
+            if (!profileTab.activeSelf)
+            {
+                profileTab.SetActive(true);
+            }
+            else if (profileTab.activeSelf)
+            {
+                profileTab.SetActive(false);
+            }
         }
     }
 }
