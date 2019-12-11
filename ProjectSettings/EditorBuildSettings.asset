@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/OptimizedMap.unity
+    guid: 50fc4b5e118327e46a4985fe17f10e54
   m_configObjects: {}

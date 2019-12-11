@@ -7,6 +7,9 @@ TagManager:
   - Infrastructure
   - NPC
   - Terrain
+  - Player Bullet
+  - Explosion
+  - Firing VFX
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - NPC
   - 
   - 
   - 

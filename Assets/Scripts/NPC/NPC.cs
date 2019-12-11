@@ -30,4 +30,9 @@ public class NPC : MonoBehaviour
     {
         target = newDestination;
     }
+
+    public void killNPC()
+    {
+        gameObject.SetActive(false);
+    }
 }

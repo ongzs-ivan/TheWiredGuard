@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class npcManager : MonoBehaviour
 {
+    public static npcManager instance;
+
     private int npcLimit = 100;
     private int npcNumber = 0;
     private List<Transform> spawnLocations;
     private List<Transform> spawnDestinations;
+    private int spawnLocNumber;
+    private int spawnDestinationNumber;
     private GameObject npcParent;
 
     private WaitForSeconds delay = new WaitForSeconds(1.0f);
@@ -19,11 +23,25 @@ public class npcManager : MonoBehaviour
     
     public GameObject npcPrefab;
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         spawnLocations = spawnLocs.GetLocations();
         spawnDestinations = destinationLocs.GetLocations();
-        npcParent = new GameObject("NPC Parent");
+        spawnLocNumber = spawnLocations.Count;
+        spawnDestinationNumber = spawnDestinations.Count;
         StartCoroutine(SpawnNPC());
     }
 
@@ -32,14 +50,25 @@ public class npcManager : MonoBehaviour
         while (npcLimit <= 100)
         {
             yield return delay;
-            Debug.Log("Spawning npc");
+            //Debug.Log("Spawning npc");
+
             // Set Spawn
-            randomPoint = Random.Range(0, spawnLocations.Count);
-            GameObject npc = Instantiate(npcPrefab, spawnLocations[randomPoint].transform.position ,Quaternion.identity) as GameObject;
-            npc.transform.SetParent(npcParent.transform);
+            randomPoint = Random.Range(0, spawnLocNumber);
+            
             // Set Destination
-            randomPoint = Random.Range(0, spawnDestinations.Count);
+            randomPoint = Random.Range(0, spawnDestinationNumber);
+
+            GameObject npc = ObjectPooler.instance.GetPooledObject("NPC");
+            if (npc != null)
+            {
+                npc.transform.position = spawnLocations[randomPoint].transform.position;
+                npc.transform.rotation = spawnLocations[randomPoint].transform.rotation;
+                npc.SetActive(true);
+            }
+
             npc.GetComponent<NPC>().SetDestination(spawnDestinations[randomPoint].transform);
+
+            //npc.transform.SetParent(npcParent.transform);
         }
     }
 }

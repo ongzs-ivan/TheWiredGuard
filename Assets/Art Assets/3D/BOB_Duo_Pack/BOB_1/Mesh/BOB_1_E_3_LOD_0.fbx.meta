@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: bfa9e2995d2352a4f9c85f05d4fb23e8
+timeCreated: 1549897759
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: E_3_Corridor
+    100002: E_3_Corridor_Windows
+    100004: //RootNode
+    100006: E_3_outWall
+    100008: E_3_Room_1
+    100010: E_3_Room_1_Windows
+    100012: E_3_Room_2
+    100014: E_3_Room_2_Windows
+    100016: E_3_Room_3
+    100018: E_3_Room_3_Windows
+    100020: E_3_Room_4
+    100022: E_3_Room_4_Windows
+    100024: E_3_Room_5
+    100026: E_3_Room_5_Windows
+    100028: E_3_Room_6
+    100030: E_3_Room_6_Windows
+    100032: E_3_Room_7
+    100034: E_3_Room_7_Windows
+    100036: E_3_Room_8
+    100038: E_3_Room_8_Windows
+    400000: E_3_Corridor
+    400002: E_3_Corridor_Windows
+    400004: //RootNode
+    400006: E_3_outWall
+    400008: E_3_Room_1
+    400010: E_3_Room_1_Windows
+    400012: E_3_Room_2
+    400014: E_3_Room_2_Windows
+    400016: E_3_Room_3
+    400018: E_3_Room_3_Windows
+    400020: E_3_Room_4
+    400022: E_3_Room_4_Windows
+    400024: E_3_Room_5
+    400026: E_3_Room_5_Windows
+    400028: E_3_Room_6
+    400030: E_3_Room_6_Windows
+    400032: E_3_Room_7
+    400034: E_3_Room_7_Windows
+    400036: E_3_Room_8
+    400038: E_3_Room_8_Windows
+    2300000: E_3_Corridor
+    2300002: E_3_Corridor_Windows
+    2300004: E_3_outWall
+    2300006: E_3_Room_1
+    2300008: E_3_Room_1_Windows
+    2300010: E_3_Room_2
+    2300012: E_3_Room_2_Windows
+    2300014: E_3_Room_3
+    2300016: E_3_Room_3_Windows
+    2300018: E_3_Room_4
+    2300020: E_3_Room_4_Windows
+    2300022: E_3_Room_5
+    2300024: E_3_Room_5_Windows
+    2300026: E_3_Room_6
+    2300028: E_3_Room_6_Windows
+    2300030: E_3_Room_7
+    2300032: E_3_Room_7_Windows
+    2300034: E_3_Room_8
+    2300036: E_3_Room_8_Windows
+    2300038: //RootNode
+    3300000: E_3_Corridor
+    3300002: E_3_Corridor_Windows
+    3300004: E_3_outWall
+    3300006: E_3_Room_1
+    3300008: E_3_Room_1_Windows
+    3300010: E_3_Room_2
+    3300012: E_3_Room_2_Windows
+    3300014: E_3_Room_3
+    3300016: E_3_Room_3_Windows
+    3300018: E_3_Room_4
+    3300020: E_3_Room_4_Windows
+    3300022: E_3_Room_5
+    3300024: E_3_Room_5_Windows
+    3300026: E_3_Room_6
+    3300028: E_3_Room_6_Windows
+    3300030: E_3_Room_7
+    3300032: E_3_Room_7_Windows
+    3300034: E_3_Room_8
+    3300036: E_3_Room_8_Windows
+    3300038: //RootNode
+    4300000: E_3_outWall
+    4300002: E_3_Room_8_Windows
+    4300004: E_3_Room_8
+    4300006: E_3_Room_7_Windows
+    4300008: E_3_Room_7
+    4300010: E_3_Room_6_Windows
+    4300012: E_3_Room_6
+    4300014: E_3_Room_5_Windows
+    4300016: E_3_Room_5
+    4300018: E_3_Room_4_Windows
+    4300020: E_3_Room_4
+    4300022: E_3_Room_3_Windows
+    4300024: E_3_Room_3
+    4300026: E_3_Room_2_Windows
+    4300028: E_3_Room_2
+    4300030: E_3_Room_1_Windows
+    4300032: E_3_Room_1
+    4300034: E_3_Corridor_Windows
+    4300036: E_3_Corridor
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

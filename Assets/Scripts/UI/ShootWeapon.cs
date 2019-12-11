@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class ShootWeapon : MonoBehaviour, IPointerClickHandler
 {
+    public static ShootWeapon instance;
+
     [SerializeField] Transform firingBarrel;
     [SerializeField] float speed = 100f;
 
@@ -15,9 +17,17 @@ public class ShootWeapon : MonoBehaviour, IPointerClickHandler
     private Vector3 bulletDirection;
     private GameObject bulletParent;
 
-    private void Start()
+    private void Awake()
     {
-        bulletParent = new GameObject("Bullet Parent");
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void SetFiringSpeed(float newFiringSpeed)
@@ -30,14 +40,22 @@ public class ShootWeapon : MonoBehaviour, IPointerClickHandler
         bulletRotation = firingBarrel.transform.rotation;
         bulletDirection = firingBarrel.forward;
 
-        GameObject bullet = Instantiate(bulletPrefab, firingBarrel.position, bulletRotation) as GameObject;
-        bullet.transform.SetParent(bulletParent.transform);
+        //GameObject bullet = Instantiate(bulletPrefab, firingBarrel.position, bulletRotation) as GameObject;
+        
+        GameObject bullet = ObjectPooler.instance.GetPooledObject("Player Bullet");
         Rigidbody instBulletRigidBody = bullet.GetComponent<Rigidbody>();
-        instBulletRigidBody.AddForce(bulletDirection * speed);
-    }
+        if (bullet != null)
+        {
+            bullet.transform.position = firingBarrel.position;
+            bullet.transform.rotation = bulletRotation;
+            bullet.SetActive(true);
 
-    //public void OnPointerDown(PointerEventData eventData) // fires on press
-    //{
-    //    Debug.Log("Firing 2.");
-    //}
+            instBulletRigidBody.AddForce(bulletDirection * speed);
+        }
+    }
+    
+    public void SetFiringBarrel(Transform newBarrelPos)
+    {
+        firingBarrel = newBarrelPos;
+    }
 }
