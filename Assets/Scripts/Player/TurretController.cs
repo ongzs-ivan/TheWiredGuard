@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    public bool isActive;
+    public bool isActive = false;
+    public bool isLockedOn = false;
 
     [Header("Movement & Rotation")]
     private float rotSpeed = 90f;
@@ -25,9 +26,13 @@ public class TurretController : MonoBehaviour
 
     private void Update()
     {
-        if (isActive)
+        if (isActive && !isLockedOn)
         {
             RotateTurret();
+        }
+        else if (isActive && isLockedOn)
+        {
+            
         }
     }
 

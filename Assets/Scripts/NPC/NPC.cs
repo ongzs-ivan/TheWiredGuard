@@ -5,30 +5,48 @@ using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    //public GameObject goTarget;
     private NavMeshAgent agent;
+    private LocationManager destinationArea;
+    private WaitForSeconds delay = new WaitForSeconds(0.5f);
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(destinationArea.GetRandomPoint());
+
         StartCoroutine(RecalculatePathRoutine());
     }
     
     IEnumerator RecalculatePathRoutine()
     {
-        WaitForSeconds delay = new WaitForSeconds(0.1f);
-
         while (true)
         {
             yield return delay;
-            agent.SetDestination(target.position);
+
+            if (agent.remainingDistance < 5.0f)
+            {
+                agent.SetDestination(destinationArea.GetRandomPoint());
+            }
         }
     }
 
-    public void SetDestination(Transform newDestination)
+    private GameObject GetDestination()
     {
-        target = newDestination;
+        GameObject go = ObjectPooler.instance.GetPooledObject("Target Destination");
+        if (go != null)
+        {
+            go.transform.position = destinationArea.GetRandomPoint();
+            go.transform.rotation = Quaternion.identity;
+            go.SetActive(true);
+        }
+        return go;
+    }
+
+    public void SetDestinationList(LocationManager newDestinationAreas)
+    {
+        destinationArea = newDestinationAreas;
     }
 
     public void killNPC()

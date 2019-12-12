@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class LocationManager : MonoBehaviour
 {
-    [SerializeField] private List<Transform> locations;
-
+    [SerializeField] private List<SpawnArea> areas;
+    
     void Start()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            locations.Add(transform.GetChild(i).GetComponent<Transform>());
+            areas.Add(transform.GetChild(i).GetComponent<SpawnArea>());
         }
     }
 
-    public List<Transform> GetLocations()
+    public Vector3 GetRandomPoint()
     {
-        return locations;
+        return areas[Random.Range(0, areas.Count)].ReturnRandomSpawnPoint();
+    }
+
+    public int ReturnRandomAreaCount()
+    {
+        return areas.Count;
     }
 }

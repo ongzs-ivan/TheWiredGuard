@@ -7,19 +7,18 @@ public class npcManager : MonoBehaviour
     public static npcManager instance;
 
     private int npcLimit = 100;
-    private int npcNumber = 0;
+    private int initialNPCnumber = 50;
+    static public int npcNumber = 0;
     private List<Transform> spawnLocations;
     private List<Transform> spawnDestinations;
-    private int spawnLocNumber;
-    private int spawnDestinationNumber;
-    private GameObject npcParent;
 
     private WaitForSeconds delay = new WaitForSeconds(1.0f);
+    private WaitForSeconds extendedDelay = new WaitForSeconds(15.0f);
     private int randomPoint;
+    private Vector3 randomSpawnPoint;
 
     [Header("Spawn & Destination Points")]
-    public LocationManager spawnLocs;
-    public LocationManager destinationLocs;
+    public LocationManager areas;
     
     public GameObject npcPrefab;
 
@@ -38,37 +37,56 @@ public class npcManager : MonoBehaviour
 
     void Start()
     {
-        spawnLocations = spawnLocs.GetLocations();
-        spawnDestinations = destinationLocs.GetLocations();
-        spawnLocNumber = spawnLocations.Count;
-        spawnDestinationNumber = spawnDestinations.Count;
-        StartCoroutine(SpawnNPC());
+        InitialSpawnNPC();
+        StartCoroutine(RealtimeSpawnNPC());
     }
 
-    IEnumerator SpawnNPC()
+    private void InitialSpawnNPC()
     {
-        while (npcLimit <= 100)
+        for (int i = 0; i < initialNPCnumber; i++)
         {
-            yield return delay;
-            //Debug.Log("Spawning npc");
-
-            // Set Spawn
-            randomPoint = Random.Range(0, spawnLocNumber);
-            
-            // Set Destination
-            randomPoint = Random.Range(0, spawnDestinationNumber);
-
+            randomSpawnPoint = areas.GetRandomPoint();
             GameObject npc = ObjectPooler.instance.GetPooledObject("NPC");
             if (npc != null)
             {
-                npc.transform.position = spawnLocations[randomPoint].transform.position;
-                npc.transform.rotation = spawnLocations[randomPoint].transform.rotation;
+                npc.transform.position = randomSpawnPoint;
+                npc.transform.rotation = Quaternion.identity;
                 npc.SetActive(true);
             }
-
-            npc.GetComponent<NPC>().SetDestination(spawnDestinations[randomPoint].transform);
-
-            //npc.transform.SetParent(npcParent.transform);
+            npc.GetComponent<NPC>().SetDestinationList(areas);
         }
     }
+
+    IEnumerator RealtimeSpawnNPC()
+    {
+        while (true)
+        {
+            if (npcNumber > 100)
+            {
+                yield return extendedDelay;
+            }
+            else if (npcNumber <= 100)
+            {
+                // Set Spawn
+                randomSpawnPoint = areas.GetRandomPoint();
+
+                //Spawn NPC
+                GameObject npc = ObjectPooler.instance.GetPooledObject("NPC");
+                if (npc != null)
+                {
+                    npc.transform.position = randomSpawnPoint;
+                    npc.transform.rotation = Quaternion.identity;
+                    npc.SetActive(true);
+                }
+
+                // Set spawned NPC destination
+                npc.GetComponent<NPC>().SetDestinationList(areas);
+
+                //Debug.Log("Spawning npc");
+                yield return delay;
+            }
+        }
+    }
+
+
 }

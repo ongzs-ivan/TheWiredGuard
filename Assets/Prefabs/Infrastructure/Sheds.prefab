@@ -96,10 +96,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 26bc8648a85c6b041a5d5b00ca61062b, type: 2}
+  - {fileID: 2100000, guid: 4250656662dc09247a4b891727b8d09f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,26 +141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2313145263941676521}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-        type: 3}
-      propertyPath: m_Name
-      value: BuildingShed (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-        type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -230,25 +211,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &5108221052407370916 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 260856063047270334}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &700936309351992630
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (9)
+      value: BuildingShed (3)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -265,6 +231,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &5108221052407370916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 260856063047270334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &700936309351992630
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,25 +316,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &5530575453284263468 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 700936309351992630}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1278676362634142722
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (1)
+      value: BuildingShed (9)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -370,6 +336,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &5530575453284263468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 700936309351992630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1278676362634142722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -440,25 +421,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &6108131986908811032 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 1278676362634142722}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2629962759075296195
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (2)
+      value: BuildingShed (1)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -475,6 +441,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &6108131986908811032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 1278676362634142722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2629962759075296195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -545,25 +526,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &6991053367953447129 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 2629962759075296195}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2737472301337248802
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed
+      value: BuildingShed (2)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -580,6 +546,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &6991053367953447129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 2629962759075296195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2737472301337248802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,25 +631,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &6955739545207058232 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 2737472301337248802}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &3707753965045574324
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (6)
+      value: BuildingShed
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -685,6 +651,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &6955739545207058232 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 2737472301337248802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3707753965045574324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -755,25 +736,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &8506774510464123310 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 3707753965045574324}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4066178615304672195
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (5)
+      value: BuildingShed (6)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -790,6 +756,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &8506774510464123310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 3707753965045574324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4066178615304672195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -860,25 +841,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &9013747012765481177 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 4066178615304672195}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &5997221569896315522
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (4)
+      value: BuildingShed (5)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -895,6 +861,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &9013747012765481177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 4066178615304672195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5997221569896315522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -965,25 +946,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &1603525493450297752 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 5997221569896315522}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7355233379111880323
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (7)
+      value: BuildingShed (4)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -1000,6 +966,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &1603525493450297752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 5997221569896315522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7355233379111880323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1070,25 +1051,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
---- !u!4 &2551778503315352985 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
-    type: 3}
-  m_PrefabInstance: {fileID: 7355233379111880323}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8455715502354414503
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2313145263941676521}
-    m_Modifications:
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_Name
-      value: BuildingShed (8)
+      value: BuildingShed (7)
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
@@ -1105,6 +1071,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Terrain
       objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}
+--- !u!4 &2551778503315352985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+    type: 3}
+  m_PrefabInstance: {fileID: 7355233379111880323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8455715502354414503
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2313145263941676521}
+    m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 3f530f86a8d3fa34e9fb946394f76a23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1174,6 +1155,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+        type: 3}
+      propertyPath: m_Name
+      value: BuildingShed (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3f530f86a8d3fa34e9fb946394f76a23,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f530f86a8d3fa34e9fb946394f76a23, type: 3}

@@ -87,10 +87,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 26bc8648a85c6b041a5d5b00ca61062b, type: 2}
+  - {fileID: 2100000, guid: 4250656662dc09247a4b891727b8d09f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,26 +132,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2406440973615130321}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
-        type: 3}
-      propertyPath: m_Name
-      value: house
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 34a35bcd19f51ad418a785d2c44544a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +201,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
+        type: 3}
+      propertyPath: m_Name
+      value: house
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 34a35bcd19f51ad418a785d2c44544a6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a35bcd19f51ad418a785d2c44544a6, type: 3}
