@@ -29,7 +29,7 @@ public class ObjectPooler : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -73,5 +73,13 @@ public class ObjectPooler : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void DespawnAll()
+    {
+        for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            pooledObjects[i].SetActive(false);
+        }
     }
 }

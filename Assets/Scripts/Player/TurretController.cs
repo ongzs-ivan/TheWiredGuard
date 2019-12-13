@@ -5,7 +5,6 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     public bool isActive = false;
-    public bool isLockedOn = false;
 
     [Header("Movement & Rotation")]
     private float rotSpeed = 90f;
@@ -19,20 +18,28 @@ public class TurretController : MonoBehaviour
     [SerializeField] Transform Barrel;
 
     [Header("Transform Refs")]
+    private PlayerCamera actingCamera;
     [SerializeField] Transform camRoot;
 
     [Header("Input Dependencies")]
     [SerializeField] JoystickInput newLeftStick;
 
+    private void Start()
+    {
+        actingCamera = transform.GetChild(3).GetComponent<PlayerCamera>();
+        camRoot = actingCamera.transform.GetChild(0);
+        newLeftStick = LeftJoystickPass.instance.LeftJoystickLocator();
+    }
+
     private void Update()
     {
-        if (isActive && !isLockedOn)
+        if (isActive && LockOnButton.instance.isLockedOn == false)
         {
             RotateTurret();
         }
-        else if (isActive && isLockedOn)
+        else if (isActive && LockOnButton.instance.isLockedOn == true)
         {
-            
+            transform.LookAt(LockOnButton.instance.returnLockOnTarget().transform);
         }
     }
 
@@ -53,12 +60,27 @@ public class TurretController : MonoBehaviour
         xRot += newLeftStick.Direction.y * Time.deltaTime * rotSpeed * sensitivity;
         xRot = Mathf.Clamp(xRot, -xRotLowerClampRange, xRotUpperClampRange);
         ElevateBarrel();
-        
+
         camRoot.rotation = Quaternion.Euler(-xRot, transform.rotation.eulerAngles.y, 0);
     }
-    
+
     private void ElevateBarrel()
     {
         Barrel.localRotation = Quaternion.Euler(-xRot, 0, 0);
+    }
+
+    public void ActivateTurret()
+    {
+        isActive = true;
+    }
+
+    public void DeactivateTurret()
+    {
+        isActive = false;
+    }
+
+    public PlayerCamera ReturnActingCam()
+    {
+        return actingCamera;
     }
 }

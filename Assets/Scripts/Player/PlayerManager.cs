@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Manager")]
     [SerializeField] ShootWeapon firingControls;
+    [SerializeField] TurretManager turretManager;
     [SerializeField] TurretController currentActiveTurret;
     [SerializeField] PlayerCamera currentActiveCamera;
 
@@ -31,15 +32,17 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     
     void Start()
     {
+        currentActiveTurret = turretManager.GetStartingTurret(3);
+        currentActiveCamera = turretManager.GetPlayerCamera(3);
         AdjustTurretSettings();
         currentActiveCamera.Activate();
+        currentActiveTurret.ActivateTurret();
     }
-    
 
     public void AdjustTurretSettings()
     {

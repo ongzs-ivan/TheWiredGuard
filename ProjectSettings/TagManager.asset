@@ -10,6 +10,8 @@ TagManager:
   - Player Bullet
   - Explosion
   - Firing VFX
+  - Civilian
+  - Criminal
   layers:
   - Default
   - TransparentFX

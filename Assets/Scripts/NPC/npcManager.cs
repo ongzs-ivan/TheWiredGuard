@@ -8,6 +8,7 @@ public class npcManager : MonoBehaviour
 
     private int npcLimit = 100;
     private int initialNPCnumber = 50;
+    private int criminalNumber;
     static public int npcNumber = 0;
     private List<Transform> spawnLocations;
     private List<Transform> spawnDestinations;
@@ -20,7 +21,8 @@ public class npcManager : MonoBehaviour
     [Header("Spawn & Destination Points")]
     public LocationManager areas;
     
-    public GameObject npcPrefab;
+    public GameObject citizenPrefab;
+    public GameObject criminalPrefab;
 
     private void Awake()
     {
@@ -32,28 +34,47 @@ public class npcManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
+        StartLevel();
+    }
+
+    public void StartLevel()
+    {
+        criminalNumber = LevelManager.instance.currentMission.maxTargetCount;
         InitialSpawnNPC();
         StartCoroutine(RealtimeSpawnNPC());
     }
 
-    private void InitialSpawnNPC()
+    public void InitialSpawnNPC()
     {
         for (int i = 0; i < initialNPCnumber; i++)
         {
             randomSpawnPoint = areas.GetRandomPoint();
-            GameObject npc = ObjectPooler.instance.GetPooledObject("NPC");
-            if (npc != null)
+            GameObject civilian = ObjectPooler.instance.GetPooledObject("Civilian");
+            if (civilian != null)
             {
-                npc.transform.position = randomSpawnPoint;
-                npc.transform.rotation = Quaternion.identity;
-                npc.SetActive(true);
+                civilian.transform.position = randomSpawnPoint;
+                civilian.transform.rotation = Quaternion.identity;
+                civilian.SetActive(true);
             }
-            npc.GetComponent<NPC>().SetDestinationList(areas);
+            civilian.GetComponent<NPC>().SetDestinationList(areas);
+        }
+
+        for (int i = 0; i < criminalNumber; i++)
+        {
+            randomSpawnPoint = areas.GetRandomPoint();
+            GameObject criminal = ObjectPooler.instance.GetPooledObject("Criminal");
+            if (criminal != null)
+            {
+                criminal.transform.position = randomSpawnPoint;
+                criminal.transform.rotation = Quaternion.identity;
+                criminal.SetActive(true);
+            }
+            criminal.GetComponent<NPC>().SetDestinationList(areas);
         }
     }
 
@@ -71,22 +92,20 @@ public class npcManager : MonoBehaviour
                 randomSpawnPoint = areas.GetRandomPoint();
 
                 //Spawn NPC
-                GameObject npc = ObjectPooler.instance.GetPooledObject("NPC");
-                if (npc != null)
+                GameObject civilian = ObjectPooler.instance.GetPooledObject("Civilian");
+                if (civilian != null)
                 {
-                    npc.transform.position = randomSpawnPoint;
-                    npc.transform.rotation = Quaternion.identity;
-                    npc.SetActive(true);
+                    civilian.transform.position = randomSpawnPoint;
+                    civilian.transform.rotation = Quaternion.identity;
+                    civilian.SetActive(true);
                 }
 
                 // Set spawned NPC destination
-                npc.GetComponent<NPC>().SetDestinationList(areas);
+                civilian.GetComponent<NPC>().SetDestinationList(areas);
 
                 //Debug.Log("Spawning npc");
                 yield return delay;
             }
         }
     }
-
-
 }

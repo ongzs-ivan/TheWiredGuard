@@ -8,20 +8,21 @@ public class CrosshairAim : MonoBehaviour
     public static CrosshairAim instance;
     public LayerMask defaultMask;
     public LayerMask npcMask;
-    public float crosshairSensitivity = 1f;
-
+    public float crosshairSensitivity = 500f;
+    
+    private RectTransform screensize;
     private RectTransform crosshairRect;
     public RectTransform defaultPos;
     private Vector2 pos;
     private Camera currentCamera;
+    private Transform worldSpaceTransform;
+
     private float resetTime = 0.5f;
     private Vector3 resetVelocity = Vector3.zero;
     private RaycastHit hit;
+    private RaycastHit boxHit;
+    private bool isHit;
     private Ray ray;
-
-    private Vector3 boxDir;
-    private Vector3 boxStart;
-    private Quaternion rotation;
     public Vector3 boxSize;
 
     [SerializeField] JoystickInput newLeftStick;
@@ -40,19 +41,26 @@ public class CrosshairAim : MonoBehaviour
 
     private void Start()
     {
+        boxSize = new Vector3(5, 5, 5);
+        if (worldSpaceTransform == null)
+            worldSpaceTransform = new GameObject("World Space Transform").transform;
         Gizmos.color = Color.red;
         currentCamera = PlayerManager.instance.GetCurrentCamera();
+        screensize = transform.GetComponentInParent<RectTransform>();
         crosshairRect = GetComponent<RectTransform>();
     }
 
     private void Update()
     {
-        if (newLeftStick.isDragging)
+        if (newLeftStick.isDragging && !LockOnButton.instance.isLockedOn)
         {
             pos = crosshairRect.position;
 
             pos.x += newLeftStick.Horizontal * Time.deltaTime * crosshairSensitivity;
             pos.y += newLeftStick.Vertical * Time.deltaTime * crosshairSensitivity;
+
+            pos.x = Mathf.Clamp(pos.x, 0, Screen.width - screensize.sizeDelta.x);
+            pos.y = Mathf.Clamp(pos.y, 0, Screen.height - screensize.sizeDelta.y);
 
             crosshairRect.position = pos;
         }
@@ -60,8 +68,11 @@ public class CrosshairAim : MonoBehaviour
         {
             crosshairRect.position = Vector3.SmoothDamp(crosshairRect.position, defaultPos.position, ref resetVelocity, resetTime);
         }
-        GetHitRotation();
-        //CheckForLockon();
+        else if (LockOnButton.instance.isLockedOn)
+        {
+            crosshairRect.position = Vector3.SmoothDamp(crosshairRect.position, LockOnButton.instance.returnLockOnRect().position, ref resetVelocity, resetTime);
+        }
+        CheckForLockon();
     }
 
     //shoots a raycast to tell where the crosshair is on
@@ -95,30 +106,41 @@ public class CrosshairAim : MonoBehaviour
 
     public void GetHitRotation()
     {
-        boxStart = currentCamera.ViewportToWorldPoint(crosshairRect.position);
-        rotation = Quaternion.LookRotation(hit.point, Vector3.up);
-        boxDir = rotation.eulerAngles;
+        if (worldSpaceTransform != null)
+        {
+            worldSpaceTransform.position = currentCamera.ViewportToWorldPoint(crosshairRect.position);
+            worldSpaceTransform.rotation = Quaternion.LookRotation(ray.direction, Vector3.up);
+        }
+        
     }
 
     public void CheckForLockon()
     {
         GetHitRotation();
-        //Debug.Log("Current world space point" + currentCamera.ViewportToWorldPoint(crosshairRect.position));
-        if (Physics.BoxCast(boxStart, boxSize, boxDir, out hit, rotation, Mathf.Infinity, npcMask))
+        isHit = (Physics.BoxCast(ray.origin, boxSize, ray.direction * 600, out boxHit, worldSpaceTransform.rotation, Mathf.Infinity, defaultMask));
+        if (!isHit)
         {
-            Debug.Log("Hit NPC");
-            Gizmos.DrawCube(boxStart + transform.forward * 50, transform.localScale);
+            LockOnButton.instance.CanLockOn(null);
+        }
+        else if (isHit)
+        {
+            if (boxHit.transform.gameObject.layer == 8 && !LockOnButton.instance.isLockedOn)
+                LockOnButton.instance.CanLockOn(boxHit.transform.gameObject);
         }
     }
 
-    private void OnDrawGizmos()
+    public void LockingOn()
     {
-        bool isHit = Physics.BoxCast(boxStart, boxSize, transform.forward, out hit, transform.rotation, Mathf.Infinity, defaultMask);
-        if (isHit)
-        {
-            Debug.Log("Hitting something");
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(boxStart + transform.forward * hit.distance, boxSize * 5);
-        }
+        
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        // drawing box ray cast
+        Gizmos.DrawRay(ray.origin + new Vector3(boxSize.x, boxSize.y, boxSize.z)  , ray.direction * 1000);
+        Gizmos.DrawRay(ray.origin + new Vector3(-boxSize.x, -boxSize.y, boxSize.z), ray.direction * 1000);
+        Gizmos.DrawRay(ray.origin + new Vector3(+boxSize.x, -boxSize.y, boxSize.z), ray.direction * 1000);
+        Gizmos.DrawRay(ray.origin + new Vector3(-boxSize.x, +boxSize.y, boxSize.z), ray.direction * 1000);
     }
 }

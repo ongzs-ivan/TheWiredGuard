@@ -30,8 +30,7 @@ public class Explosion : MonoBehaviour
         int i = 0;
         while (i < hitColliders.Length)
         {
-            hitColliders[i].gameObject.SetActive(false);
-            //Debug.Log("Kill NPC");
+            hitColliders[i].gameObject.GetComponent<NPC>().OnDeath();
             i++;
         }
     }

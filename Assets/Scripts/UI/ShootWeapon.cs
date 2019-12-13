@@ -45,8 +45,6 @@ public class ShootWeapon : MonoBehaviour, IPointerClickHandler
     {
         bulletRotation = firingBarrel.transform.rotation;
         bulletDirection = firingBarrel.forward;
-
-        //GameObject bullet = Instantiate(bulletPrefab, firingBarrel.position, bulletRotation) as GameObject;
         
         GameObject bullet = ObjectPooler.instance.GetPooledObject("Player Bullet");
         Rigidbody instBulletRigidBody = bullet.GetComponent<Rigidbody>();

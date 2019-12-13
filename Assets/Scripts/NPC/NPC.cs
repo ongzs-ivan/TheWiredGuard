@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPC : MonoBehaviour
+public abstract class NPC : MonoBehaviour
 {
-    //public GameObject goTarget;
     private NavMeshAgent agent;
     private LocationManager destinationArea;
     private WaitForSeconds delay = new WaitForSeconds(0.5f);
@@ -49,8 +48,5 @@ public class NPC : MonoBehaviour
         destinationArea = newDestinationAreas;
     }
 
-    public void killNPC()
-    {
-        gameObject.SetActive(false);
-    }
+    public abstract void OnDeath();
 }

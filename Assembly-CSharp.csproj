@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CutsceneCamera.cs" />
+    <Compile Include="Assets\Scripts\NPC\Citizen.cs" />
+    <Compile Include="Assets\Scripts\NPC\Criminal.cs" />
     <Compile Include="Assets\Scripts\NPC\LocationManager.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
     <Compile Include="Assets\Scripts\NPC\SpawnArea.cs" />
@@ -70,13 +72,19 @@
     <Compile Include="Assets\Scripts\NPC\npcProfile.cs" />
     <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Player\JoystickInput.cs" />
+    <Compile Include="Assets\Scripts\Player\LeftJoystickPass.cs" />
+    <Compile Include="Assets\Scripts\Player\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Player\MissionInfo.cs" />
     <Compile Include="Assets\Scripts\Player\PinchToZoom.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Player\TurretController.cs" />
+    <Compile Include="Assets\Scripts\Player\TurretManager.cs" />
     <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\Scripts\UI\CrosshairAim.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadLevel.cs" />
+    <Compile Include="Assets\Scripts\UI\LockOnButton.cs" />
     <Compile Include="Assets\Scripts\UI\PauseButton.cs" />
     <Compile Include="Assets\Scripts\UI\QuitButton.cs" />
     <Compile Include="Assets\Scripts\UI\ResumeButton.cs" />
@@ -84,7 +92,25 @@
     <Compile Include="Assets\Scripts\UI\ShootWeapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\Explosion.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Ben/Documents/CodeOfRed/City of Iron/The Wired Guard/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
